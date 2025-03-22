@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  nest-app:
+    build:
+      context: .
+      args:
+        - DATABASE_URL=${DATABASE_URL}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://victor:fiap@db:5432/fiap?schema=public
+      - PORT=3000
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=victor
+      - POSTGRES_PASSWORD=fiap
+      - POSTGRES_DB=fiap
