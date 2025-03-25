@@ -5,7 +5,7 @@ import {ClientPrismaRepository} from "@/infrastructure/repositories/prisma/clien
 import {CreateClientUseCase} from "@/application/usecases/clients/create-client.usecase";
 import {GetClientUseCase} from "@/application/usecases/clients/get-client.usecase";
 import {UuidGenerator} from "@/infrastructure/providers/uuid-generator";
-import {CognitoService} from "@/infrastructure/external/cognitoService";
+import {CognitoService} from "@/infrastructure/external/cognito.service";
 import {IamService} from "@/domain/external/iam.service";
 
 @Module({
